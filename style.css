@@ -1,50 +1,114 @@
+
+/* ================= GLOBAL ================= */
+
 body {
   margin: 0;
   font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 17px;
   background: #0f172a;
-  color: #ffffff;
-  line-height: 1.6;
+  color: #f1f5f9;
+  line-height: 1.65;
 }
 
-.container { width: 90%; max-width: 1100px; margin: auto; }
-.narrow { max-width: 750px; }
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
 
-.nav { padding: 18px 0; background: #0f172a; }
-.nav-inner { display: flex; justify-content: space-between; align-items: center; }
-.nav-links { display: flex; align-items: center; }
+.narrow {
+  max-width: 750px;
+}
 
-.nav a { color: #f1f5f9; margin-left: 25px; text-decoration: none; }
+/* ================= NAV ================= */
+
+.nav {
+  padding: 18px 0;
+  background: #0f172a;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav a {
+  color: #f1f5f9;
+  margin-left: 28px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* ================= BUTTON ================= */
 
 .btn {
-  padding: 8px 14px;
+  padding: 8px 16px;
   background: #38bdf8;
   color: #0f172a;
   border-radius: 6px;
   font-weight: 600;
+  font-size: 0.85rem;
 }
 
-.hero { padding: 110px 0 50px 0; text-align: center; }
+/* ================= HERO ================= */
 
-.section { padding: 90px 0; }
-
-.section.light { 
-  background: #f1f5f9; 
-  color: #0f172a; 
+.hero {
+  padding: 110px 0 60px 0;
+  text-align: center;
 }
 
-.section.dark { 
-  background: #0f172a; 
-  color: #f1f5f9; 
+.hero h1 {
+  font-size: 3.1rem;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-bottom: 18px;
 }
 
-.center { text-align: center; margin-bottom: 50px; }
+.hero p {
+  font-size: 1.15rem;
+  font-weight: 400;
+}
 
-/* ===== TIMELINE ===== */
+/* ================= SECTIONS ================= */
 
-.timeline { 
-  position: relative; 
-  max-width: 1000px; 
-  margin: auto; 
+.section {
+  padding: 100px 0;
+}
+
+.section.light {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.section.dark {
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin-bottom: 50px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* ================= TIMELINE ================= */
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .timeline::before {
@@ -66,17 +130,43 @@ body {
 
 .timeline-card {
   background: #1e293b;
-  padding: 26px;
-  border-radius: 12px;
-  max-width: 420px;
+  padding: 30px;
+  border-radius: 14px;
+  max-width: 440px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
 }
 
-/* THIS is the only override needed */
+/* Force white text inside timeline cards */
 .section.light .timeline-card,
 .section.light .timeline-card h3,
 .section.light .timeline-card p,
 .section.light .timeline-card span {
   color: #ffffff;
+}
+
+/* Timeline Job Titles */
+.timeline-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: -0.2px;
+}
+
+/* Timeline Description */
+.timeline-card p {
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+/* Timeline Date */
+.date {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 500;
+  color: #cbd5e1;
+  margin-bottom: 14px;
 }
 
 .timeline-card.left {
@@ -91,24 +181,10 @@ body {
   text-align: left;
 }
 
-.date {
-  font-size: 0.8rem;
-  color: #ffffff;
-  margin-bottom: 10px;
-  display: block;
-}
+/* ================= FOOTER ================= */
 
-footer { 
-  padding: 40px 0; 
-  text-align: center; 
-}
-
-/* HARD OVERRIDE – DO NOT MOVE */
-
-#timeline .timeline-card,
-#timeline .timeline-card h3,
-#timeline .timeline-card p,
-#timeline .timeline-card span,
-#timeline .timeline-card * {
-  color: #ffffff !important;
+footer {
+  padding: 40px 0;
+  text-align: center;
+  font-size: 0.9rem;
 }
