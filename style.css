@@ -1,72 +1,89 @@
+
+:root {
+  --bg-dark: #0f172a;
+  --bg-light: #f1f5f9;
+  --accent: #38bdf8;
+  --text-dark: #0f172a;
+  --text-light: #f1f5f9;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #0f172a;
-  color: #f1f5f9;
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
 }
 
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
+body.light-mode {
+  background: var(--bg-light);
+  color: var(--text-dark);
 }
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--accent);
+  width: 0%;
+  z-index: 2000;
+}
+
+.container { width: 90%; max-width: 1100px; margin: auto; }
+.narrow { max-width: 750px; }
 
 .nav {
-  background: #0f172a;
-  border-bottom: 1px solid #1e293b;
-  padding: 20px 0;
+  background: var(--bg-dark);
+  padding: 18px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.nav-inner {
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav a {
-  color: #cbd5e1;
-  margin-left: 25px;
-  text-decoration: none;
-}
+.nav a { margin-left: 25px; text-decoration: none; color: var(--text-light); }
 
 .hero {
-  padding: 180px 0;
+  padding: 220px 0;
   text-align: center;
-  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  animation: fadeUp 1s ease forwards;
 }
 
-.section {
-  padding: 140px 0;
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
 }
 
-.section.dark { background: #0f172a; }
-.section.light { background: #f8fafc; color: #0f172a; }
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-.center { text-align: center; margin-bottom: 80px; }
+.section { padding: 160px 0; }
+.section.light { background: var(--bg-light); color: var(--text-dark); }
 
 .btn {
   display: inline-block;
   margin-top: 25px;
-  padding: 14px 28px;
-  background: #38bdf8;
-  color: #0f172a;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: var(--text-dark);
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 6px;
   font-weight: 600;
 }
 
-.timeline {
-  position: relative;
-  max-width: 1000px;
-  margin: auto;
-}
+.btn.small { padding: 8px 14px; font-size: 0.8rem; }
+
+.timeline { position: relative; max-width: 1000px; margin: auto; }
 
 .timeline::before {
   content: "";
   position: absolute;
-  width: 2px;
+  width: 1px;
   background: #cbd5e1;
   top: 0;
   bottom: 0;
@@ -74,11 +91,22 @@ body {
   transform: translateX(-50%);
 }
 
+.timeline-progress-line {
+  position: absolute;
+  width: 2px;
+  background: var(--accent);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0;
+  transition: height 0.3s ease;
+}
+
 .timeline-row {
   display: grid;
   grid-template-columns: 1fr 60px 1fr;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
 }
 
 .timeline-row:nth-child(odd) .timeline-card {
@@ -93,62 +121,27 @@ body {
   text-align: left;
 }
 
-.timeline-line {
-  grid-column: 2;
-  display: flex;
-  justify-content: center;
-}
+.timeline-line { grid-column: 2; display: flex; justify-content: center; }
 
 .timeline-dot {
-  width: 16px;
-  height: 16px;
-  background: #0f172a;
-  border: 3px solid #38bdf8;
+  width: 14px;
+  height: 14px;
+  background: var(--bg-dark);
+  border: 2px solid var(--accent);
   border-radius: 50%;
 }
 
 .timeline-card {
   background: #1e293b;
-  padding: 30px;
-  border-radius: 16px;
-  max-width: 450px;
+  padding: 28px;
+  border-radius: 12px;
+  max-width: 420px;
 }
 
-.date {
-  font-size: 0.75rem;
-  color: #94a3b8;
-  display: block;
-  margin-bottom: 10px;
-}
+.resume-body { padding: 120px 0; background: var(--bg-light); color: var(--text-dark); }
 
-.resume-header {
-  padding: 160px 0 80px;
-  text-align: center;
-  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-}
-
-.resume-section {
-  padding: 100px 0;
-  background: #f8fafc;
-  color: #0f172a;
-}
-
-.resume-container {
-  max-width: 800px;
-}
-
-.resume-block {
-  margin-bottom: 40px;
-}
-
-.resume-date {
-  font-size: 0.8rem;
-  color: #64748b;
-}
-
-footer {
-  padding: 50px 0;
-  background: #0f172a;
-  text-align: center;
-  border-top: 1px solid #1e293b;
+@media print {
+  .nav, .scroll-progress, button {
+    display: none;
+  }
 }
