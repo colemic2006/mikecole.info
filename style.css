@@ -85,3 +85,15 @@ body {
 }
 
 footer { padding: 40px 0; text-align: center; }
+
+/* ===== FORCE TIMELINE TEXT WHITE ===== */
+
+.section.light .timeline-card {
+  color: #ffffff !important;
+}
+
+.section.light .timeline-card h3,
+.section.light .timeline-card p,
+.section.light .timeline-card span {
+  color: #ffffff !important;
+}
