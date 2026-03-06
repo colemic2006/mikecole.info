@@ -188,6 +188,13 @@ body {
 }
 
 .timeline-card {
+  /* Force white text inside ALL timeline cards */
+.timeline-card,
+.timeline-card h3,
+.timeline-card p,
+.timeline-card span,
+.timeline-card .date {
+  color: #ffffff !important;
   background: #1e293b;
   padding: 30px;
   border-radius: 14px;
