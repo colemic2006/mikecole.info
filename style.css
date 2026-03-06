@@ -70,7 +70,7 @@ body {
 /* ================= HERO ================= */
 
 .hero {
-  padding: 110px 0 30px 0;
+  padding: 110px 0 30px 0; /* tightened bottom spacing */
   text-align: center;
 }
 
@@ -88,7 +88,7 @@ body {
 /* ================= SECTIONS ================= */
 
 .section {
-  padding: 80px 0;
+  padding: 80px 0; /* executive density */
 }
 
 .section.light {
@@ -112,6 +112,12 @@ body {
   text-align: center;
 }
 
+/* Center Services & Contact */
+#services,
+#contact {
+  text-align: center;
+}
+
 /* ================= TIMELINE ================= */
 
 .timeline {
@@ -120,7 +126,7 @@ body {
   margin: auto;
 }
 
-/* Center line base */
+/* Center base line */
 .timeline::before {
   content: "";
   position: absolute;
@@ -132,7 +138,7 @@ body {
   transform: translateX(-50%);
 }
 
-/* Animated fill line */
+/* Animated progress line */
 .timeline-progress {
   position: absolute;
   width: 2px;
@@ -147,7 +153,7 @@ body {
 .timeline-row {
   display: grid;
   grid-template-columns: 1fr 80px 1fr;
-  margin-bottom: 110px;
+  margin-bottom: 100px;
   position: relative;
 }
 
@@ -166,12 +172,12 @@ body {
   transition: 0.3s ease;
 }
 
-/* Glow when visible */
 .timeline-row.visible::after {
   box-shadow: 0 0 14px rgba(56,189,248,0.7);
 }
 
-/* Cards */
+/* Timeline card */
+
 .timeline-card {
   background: #1e293b;
   padding: 30px;
@@ -197,13 +203,14 @@ body {
   opacity: 1;
 }
 
-/* Hover elevation */
+/* Hover polish */
 .timeline-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 45px rgba(0,0,0,0.45);
 }
 
-/* Title styling */
+/* Typography hierarchy */
+
 .timeline-card h3 {
   font-size: 1.5rem;
   font-weight: 600;
