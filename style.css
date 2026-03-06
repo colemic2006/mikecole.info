@@ -139,7 +139,7 @@ body {
   transform: translateX(-50%);
 }
 
-/* Progress line (fixed to avoid layout bugs) */
+/* Progress line */
 .timeline-progress {
   position: absolute;
   width: 2px;
@@ -148,7 +148,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   height: 0;
-  pointer-events: none; /* prevents scroll interference */
+  pointer-events: none;
   z-index: 1;
 }
 
@@ -181,13 +181,20 @@ body {
   box-shadow: 0 0 14px rgba(56,189,248,0.7);
 }
 
-/* Timeline card */
+/* ================= TIMELINE CARD (UPDATED) ================= */
 
 .timeline-card {
   background: #1e293b;
   padding: 30px;
   border-radius: 14px;
   max-width: 440px;
+
+  /* 👇 FIXED SIZE IMPLEMENTATION */
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
   box-shadow: 0 8px 25px rgba(0,0,0,0.35);
   transform: translateY(40px);
   opacity: 0;
