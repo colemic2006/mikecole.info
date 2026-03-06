@@ -151,18 +151,6 @@ body {
   transform: translateX(-50%);
 }
 
-.timeline-progress {
-  position: absolute;
-  width: 2px;
-  background: #38bdf8;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
 .timeline-row {
   display: grid;
   grid-template-columns: 1fr 60px 1fr;
@@ -199,7 +187,7 @@ body {
   z-index: 3;
 }
 
-/* 🔥 FIX: Force white text inside ALL timeline cards */
+/* Force white text in timeline cards */
 .timeline-card,
 .timeline-card h3,
 .timeline-card p,
@@ -250,12 +238,6 @@ body {
 
 /* ================= FOOTER ================= */
 
-footer {
-  padding: 40px 0;
-  text-align: center;
-}
-/* ================= FOOTER ================= */
-
 .site-footer {
   background: #1a1c35;
   padding-top: 70px;
@@ -270,12 +252,9 @@ footer {
   padding-bottom: 50px;
 }
 
-/* Force left alignment in all columns */
 .footer-col {
   text-align: left;
 }
-
-/* Headings */
 
 .footer-col h3,
 .footer-col h4 {
@@ -300,10 +279,9 @@ footer {
   color: #9ca3af;
 }
 
-/* Remove bullets completely */
 .footer-links {
-  list-style: none;        /* removes bullets */
-  padding: 0;              /* removes left indent */
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
@@ -315,7 +293,6 @@ footer {
   text-decoration: none;
   color: #d1d5db;
   font-size: 0.95rem;
-  display: inline-block;
   transition: 0.2s ease;
 }
 
@@ -323,18 +300,32 @@ footer {
   color: #38bdf8;
 }
 
+/* 🔥 ICON VERSION */
+
+.footer-social {
+  display: flex;
+  gap: 18px;
+}
+
 .footer-social a {
-  display: inline-block;
-  margin-right: 15px;
-  text-decoration: none;
-  color: #d1d5db;
-  font-size: 0.95rem;
-  transition: 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  transition: all 0.25s ease;
 }
 
 .footer-social a:hover {
   color: #38bdf8;
+  transform: translateY(-3px);
 }
+
+.footer-social svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Bottom Bar */
 
 .footer-bottom {
   text-align: center;
