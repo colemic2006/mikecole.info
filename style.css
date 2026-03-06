@@ -114,14 +114,25 @@ body {
   padding-top: 40px;
 }
 
+/* ================= SERVICES & CONTACT (CLEAN FIX) ================= */
+
+/* Keep headings centered */
 #services h2,
 #contact h2 {
   text-align: center;
 }
 
+/* Left-align body text */
 #services p,
 #contact p {
   text-align: left;
+}
+
+/* Keep content block centered but text left-aligned */
+#services .narrow,
+#contact .narrow {
+  text-align: left;
+  margin: 0 auto;
 }
 
 /* ================= TIMELINE ================= */
@@ -132,7 +143,6 @@ body {
   margin: auto;
 }
 
-/* Base vertical line */
 .timeline::before {
   content: "";
   position: absolute;
@@ -144,7 +154,6 @@ body {
   transform: translateX(-50%);
 }
 
-/* Progress line */
 .timeline-progress {
   position: absolute;
   width: 2px;
@@ -157,16 +166,13 @@ body {
   z-index: 1;
 }
 
-/* Timeline rows */
-
 .timeline-row {
   display: grid;
-  grid-template-columns: 1fr 80px 1fr;
+  grid-template-columns: 1fr 60px 1fr;
   margin-bottom: 100px;
   position: relative;
 }
 
-/* Node dot */
 .timeline-row::after {
   content: "";
   position: absolute;
@@ -176,31 +182,18 @@ body {
   border: 3px solid #38bdf8;
   border-radius: 50%;
   left: 50%;
-  top: 10px;
+  top: 18px;
   transform: translateX(-50%);
-  transition: 0.3s ease;
   z-index: 2;
 }
-
-.timeline-row.visible::after {
-  box-shadow: 0 0 14px rgba(56,189,248,0.7);
-}
-
-/* ================= TIMELINE CARD (FIXED) ================= */
 
 .timeline-card {
   background: #1e293b;
   padding: 30px;
   border-radius: 14px;
-
-  width: 100%;           /* 🔥 KEY FIX */
-  max-width: 440px;
+  width: 420px;
   min-height: 180px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
+  box-sizing: border-box;
   box-shadow: 0 8px 25px rgba(0,0,0,0.35);
   transform: translateY(40px);
   opacity: 0;
@@ -209,33 +202,15 @@ body {
   z-index: 3;
 }
 
-/* Ensure cards stretch consistently */
-.timeline-card.left,
-.timeline-card.right {
-  align-self: stretch;
-}
-
-/* White text in light sections */
-.section.light .timeline-card,
-.section.light .timeline-card h3,
-.section.light .timeline-card p,
-.section.light .timeline-card span {
-  color: #ffffff;
-}
-
-/* Reveal animation */
 .timeline-row.visible .timeline-card {
   transform: translateY(0);
   opacity: 1;
 }
 
-/* Hover effect */
 .timeline-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 45px rgba(0,0,0,0.45);
 }
-
-/* Typography */
 
 .timeline-card h3 {
   font-size: 1.5rem;
@@ -255,8 +230,6 @@ body {
   color: #cbd5e1;
   margin-bottom: 14px;
 }
-
-/* Left / Right alignment */
 
 .timeline-card.left {
   grid-column: 1;
