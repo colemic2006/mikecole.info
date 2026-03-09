@@ -130,14 +130,14 @@ body {
   color: #ffffff;
 }
 
-/* ================= FOOTER FIXES ================= */
+/* ================= FOOTER ================= */
 
 .site-footer {
   padding: 60px 0 0 0;
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* Grid layout restored */
+/* Grid layout */
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -145,12 +145,13 @@ body {
   padding-bottom: 40px;
 }
 
-/* Force left alignment */
+/* Left align */
 .footer-col {
   text-align: left;
 }
 
-/* Remove bullets */
+/* Navigation links */
+
 .footer-links {
   list-style: none;
   padding: 0;
@@ -171,10 +172,25 @@ body {
   color: #38bdf8;
 }
 
-/* Social icons sizing fix */
+/* ================= SOCIAL ICONS ================= */
+
 .footer-social {
   display: flex;
   gap: 18px;
+  margin-top: 10px;
+}
+
+.footer-social a {
+  color: #cbd5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social a:hover {
+  color: #38bdf8;
+  transform: translateY(-2px);
 }
 
 .footer-social svg {
@@ -182,7 +198,8 @@ body {
   height: 20px;
 }
 
-/* Bottom bar */
+/* ================= FOOTER BOTTOM ================= */
+
 .footer-bottom {
   text-align: center;
   padding: 25px 0;
