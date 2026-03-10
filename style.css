@@ -21,7 +21,6 @@ body {
   line-height: 1.65;
 }
 
-/* prevent images from blowing up */
 img{
   max-width:100%;
   height:auto;
@@ -52,8 +51,6 @@ img{
   align-items: center;
 }
 
-/* logo layout */
-
 .logo {
   display:flex;
   align-items:center;
@@ -64,14 +61,11 @@ img{
 
 .logo-img{
   height:28px;
-  width:auto;
 }
 
 .logo-text{
   color:var(--white);
 }
-
-/* navigation */
 
 .nav-links {
   display: flex;
@@ -101,8 +95,6 @@ img{
     radial-gradient(circle at bottom, rgba(242,183,5,.08), transparent 60%);
 }
 
-/* hero logo halo */
-
 .hero-logo {
   position: relative;
   display: inline-block;
@@ -122,7 +114,6 @@ img{
 
 .hero-logo img{
   width:85px;
-  max-width:85px;
   margin:0 auto 22px auto;
 }
 
@@ -195,6 +186,8 @@ a:hover{
   display: flex;
 }
 
+/* timeline center dot */
+
 .timeline-row::after {
   content: "";
   position: absolute;
@@ -202,7 +195,7 @@ a:hover{
   top: 20px;
   width: 14px;
   height: 14px;
-  background: var(--navy);
+  background: white;
   border: 3px solid var(--purple);
   border-radius: 50%;
   transform: translateX(-50%);
@@ -253,14 +246,32 @@ a:hover{
   margin-bottom:8px;
 }
 
-.timeline-card h3{
-  margin-top:0;
+/* ===== CARD COLORS BASED ON SECTION ===== */
+
+/* dark sections */
+
+.section.dark .timeline-card{
+  background: var(--navy-dark);
+  color: var(--white);
 }
 
-.timeline-card,
-.timeline-card h3,
-.timeline-card p {
-  color: var(--white);
+.section.dark .timeline-card p{
+  color:#cbd5f5;
+}
+
+/* light sections (education + certifications) */
+
+.section.light .timeline-card{
+  background: white;
+  color: var(--navy);
+}
+
+.section.light .timeline-card h3{
+  color: var(--navy);
+}
+
+.section.light .timeline-card p{
+  color:#334155;
 }
 
 /* ================= LISTS ================= */
@@ -280,8 +291,6 @@ li{
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* grid layout */
-
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -292,8 +301,6 @@ li{
 .footer-col {
   text-align: left;
 }
-
-/* footer links */
 
 .footer-links {
   list-style: none;
