@@ -21,6 +21,13 @@ body {
   line-height: 1.65;
 }
 
+/* prevent oversized images */
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
 .container {
   width: 90%;
   max-width: 1100px;
@@ -50,13 +57,14 @@ body {
 .logo {
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
   font-weight:600;
-  font-size:1.1rem;
+  font-size:1rem;
 }
 
 .logo-img{
-  height:40px;
+  height:28px;
+  width:auto;
 }
 
 .logo-text{
@@ -86,17 +94,18 @@ body {
 /* ================= HERO ================= */
 
 .hero {
-  padding: 110px 0 20px 0;
+  padding: 80px 0 10px 0;
   text-align: center;
 }
 
 .hero-logo img{
-  width:120px;
-  margin-bottom:30px;
+  width:85px;
+  max-width:85px;
+  margin:0 auto 22px auto;
 }
 
 .hero h1{
-  font-size:48px;
+  font-size:46px;
   margin-bottom:10px;
 }
 
